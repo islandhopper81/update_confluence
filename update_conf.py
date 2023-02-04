@@ -8,12 +8,12 @@ my_space_key = os.environ.get("SPACE_KEY")
 my_page_title = os.environ.get("PAGE_TITLE")
 
 confluence = Confluence(
-  ulr=my_url,
-  username=my_name,
-  password=my_secret
+  url = my_url,
+  username = my_name,
+  password = my_secret
 )
 
-page_id = confluence.page_id(my_space_key, my_page_title)
+page_id = confluence.get_page_id(my_space_key, my_page_title)
 
 page = confluence.get_page_by_id(page_id, expand='body.storage')
 
